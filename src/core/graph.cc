@@ -170,19 +170,6 @@ namespace infini
             tensor->setDataBlob(make_ref<BlobObj>(runtime,reinterpret_cast<void*>(reinterpret_cast<char*>(allocator.getPtr()) +addr+ offset)));
             offset += tensor->getBytes();
         }
-        // size_t size{0};
-        // for (auto tensor : tensors) {
-        //     size += tensor->getBytes();
-        // }
-
-        // allocator.alloc(size);
-        // size_t offset{0};
-        // for (auto tensor : tensors) {
-        //     tensor->setDataBlob(make_ref<BlobObj>(
-        //         runtime, reinterpret_cast<void *>(
-        //                     reinterpret_cast<char *>(allocator.getPtr()) + offset)));
-        //     offset += tensor->getBytes();
-        // }
 
         allocator.info();
     }
