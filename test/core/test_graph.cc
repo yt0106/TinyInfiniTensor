@@ -24,8 +24,10 @@ namespace infini
         g->addOpWithOutputs<MatmulObj>(t2, t3, o);
         // 优化前
         g->print();
+        std::cout << "start optimize" << std::endl;
         g->optimize();
         // 优化后
+        std::cout << "end optimize" << std::endl;
         g->print();
         EXPECT_EQ(g->getOperators().size(), 1);
         EXPECT_EQ(g->getTensors().size(), 3);
